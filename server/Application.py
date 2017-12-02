@@ -9,9 +9,11 @@ import nltk
 import requests
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from flask_cors import CORS
 nltk.data.path.append('./nltk_data/')
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 sid = SentimentIntensityAnalyzer()
 
 @app.route('/')
