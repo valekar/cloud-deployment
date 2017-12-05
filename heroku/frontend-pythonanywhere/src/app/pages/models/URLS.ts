@@ -2,8 +2,10 @@ export class URLS{
     //prod
     //public static cloud_provider = "https://my-cloud-project.herokuapp.com";
     //public static cloud_provider = "http://cloud-env.vmfc4stcsn.eu-west-1.elasticbeanstalk.com/";
+    public static cloud_provider = "http://testpydcu.pythonanywhere.com/";
+    
     //dev
-    public static cloud_provider = "";
+    //public static cloud_provider = "";
     
     public static RANDOM_SENTENCE_URL = URLS.cloud_provider + "/api/random/sentence/";
     public static GET_NLTK_SCORE_URL = URLS.cloud_provider +"/api/opensource/score/";
