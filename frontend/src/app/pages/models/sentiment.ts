@@ -3,7 +3,8 @@ export class OpenSourceCode {
         neg: number;
         neu: number;
         pos: number;
-    }
+    };
+    responseTime:number;
 }
 
 export class Sentence {
@@ -11,7 +12,8 @@ export class Sentence {
 }
 
 export class Azure {
-    data: Document
+    data: Document;
+    responseTime:number;
 }
 
 
@@ -37,7 +39,8 @@ export class Watson {
                 label: string;
             }
         }
-    }
+    };
+    responseTime:number;
 }
 
 
@@ -72,5 +75,32 @@ export class Google{
             }
         >;
         language: string
-    }
+    };
+    responseTime:number;
+}
+
+
+export class ResponseTime {
+    Google:number;
+    Watson:number;
+    Azure:number;
+    NLTK:number;
+}
+
+export class Companies {
+    data:Array<Company>;
+}
+
+export class Company {
+    name:string;
+    responseTime:number;
+}
+
+export class CorrectiveNess{
+    data:Array<Value>;
+}
+
+export class Value{
+    name:string;
+    value:number;
 }

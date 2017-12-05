@@ -5,6 +5,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { SimpleBarChartComponent } from './components/simple-bar-chart/simple-bar-chart.component';
 import { BarChartDirective } from './directives/bar-chart.directive';
+import { CompareBarDirective } from './directives/compare-bar.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BarChartDirective } from './directives/bar-chart.directive';
   declarations: [
     DashboardComponent,
     SimpleBarChartComponent,
-    BarChartDirective
+    BarChartDirective,
+    CompareBarDirective
   ],
   providers:[]
 })

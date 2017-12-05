@@ -33,37 +33,49 @@ class RandmMeta(Resource):
 
 class NLTKMeta(Resource):
     def post(self):
+        start = time.time()
         json_data = request.get_json(force=True)
         sentence = json_data["sentence"]
         polarity = sid.polarity_scores(sentence)
-        return {'data': polarity}
+        end = time.time()
+        response_time = end - start
+        return {'data': polarity,'responseTime':response_time}
 
 
 class MicrosoftMeta(Resource):
     def post(self):
+        start = time.time()
         microsoft = Microsoft()
         json_data = request.get_json(force=True)
         sentence = json_data["sentence"]
         result = microsoft.getScore(sentence)
-        return {'data': result}
+        end = time.time()
+        response_time = end - start
+        return {'data': result, 'responseTime':response_time}
 
 
 class WatsonMeta(Resource):
     def post(self):
+        start = time.time()
         watson = Watson()
         json_data = request.get_json(force=True)
         sentence = json_data["sentence"]
         result = watson.getScore(sentence)
-        return {'data': result}
+        end = time.time()
+        response_time = end -start
+        return {'data': result, 'responseTime':response_time}
 
 
 class GoogleMeta(Resource):
     def post(self):
+        start = time.time()
         google = Google()
         json_data = request.get_json(force=True)
         sentence = json_data["sentence"]
         result = google.getScore(sentence)
-        return {'data': result}
+        end = time.time()
+        response_time = end -start
+        return {'data': result, 'responseTime':response_time}
 
 
 api.add_resource(NLTKMeta, '/api/opensource/score/')

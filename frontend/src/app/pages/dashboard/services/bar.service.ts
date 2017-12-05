@@ -26,6 +26,7 @@ export class BarService {
   }
 
   getAzureScore(str:Sentence){
+    console.log(URLS.GET_AZURE_SCORE_URL);
     return this.http.post(URLS.GET_AZURE_SCORE_URL,str,this.commonService.getHeaderOptions())
     .map((res:Response)=> {return  res.json()})
     .catch((err:Response)=> {return Observable.throw(err.json())})
